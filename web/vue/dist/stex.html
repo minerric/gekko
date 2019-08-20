@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Stex Auth</title>
+  </head>
+  <body>
+    <form class="" method="GET" action="https://app.stex.com/oauth/authorize" method="post" style="max-width: 400px; margin: 50px auto">
+      <input type="hidden" name="scope" value="trade profile reports withdrawal push">
+      <input type="hidden" name="response_type" value="code">
+      <input type="hidden" name="redirect_uri" value="http://localhost:3000/stex.html">
+      <fieldset>
+        <input type="text" name="client_id" value="" placeholder="Client Id">
+      </fieldset>
+      <fieldset>
+        <input type="text" name="secret" value="" placeholder="Secret">
+      </fieldset>
+      <button type="submit" name="button">Get tokens</button>
+
+      <div style="width: 100%; word-break: break-all;">
+        <h2>Code:</h2>
+        <div id="code"></div>
+      </div>
+    </form>
+    <script
+			  src="https://code.jquery.com/jquery-3.4.1.min.js"
+			  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+			  crossorigin="anonymous"></script>
+    <script>
+      $(function () {
+        var params = new window.URLSearchParams(window.location.search);
+        if (params.get('code')) {
+          $('#code').text(params.get('code'));
+          // $.post('https://api3.stex.com/oauth/token', {
+          //   grant_type: 'authorization_code',
+          //   code: params.get('code'),
+          //   redirect_uri: 'http://localhost:3000/stex.html',
+          //   client_id: '650',
+          //   client_secret: '6QRrkycqbEir4IQ2TJH8V0FkWsW122WpG6NDWCwk',
+          // });
+        }
+      });
+    </script>
+  </body>
+</html>

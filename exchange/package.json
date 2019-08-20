@@ -35,6 +35,7 @@
     "moment": "^2.22.1",
     "request-promise": "^4.2.2",
     "retry": "^0.12.0",
+    "stocks-exchange-client": "2.2.0",
     "therocktrading": "^0.9.0"
   }
 }

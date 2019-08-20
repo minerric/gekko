@@ -34,6 +34,5 @@ module.exports = function *() {
 
     allCapabilities.push(Trader.getCapabilities());
   });
-
   this.body = allCapabilities;
 }
